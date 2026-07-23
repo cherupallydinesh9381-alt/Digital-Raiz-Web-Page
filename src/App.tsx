@@ -8,13 +8,8 @@ import IndustriesPage from '@/pages/IndustriesPage';
 import PortfolioPage from '@/pages/PortfolioPage';
 import BlogPage from '@/pages/BlogPage';
 import ContactPage from '@/pages/ContactPage';
-import BuildLanePage from '@/pages/services/build/BuildLanePage';
 import GrowLanePage from '@/pages/services/grow/GrowLanePage';
 import AdviseLanePage from '@/pages/services/advise/AdviseLanePage';
-import WebDevelopmentPage from '@/pages/services/build/WebDevelopmentPage';
-import MobileAppsPage from '@/pages/services/build/MobileAppsPage';
-import UiUxDesignPage from '@/pages/services/build/UiUxDesignPage';
-import CustomSoftwarePage from '@/pages/services/build/CustomSoftwarePage';
 import { SplashScreen } from '@/components/SplashScreen';
 import { SplashProvider } from '@/components/SplashContext';
 
@@ -28,14 +23,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
-
-          {/* Services - Build Sub-routes */}
-          <Route path="/services/build" element={<BuildLanePage />} />
-          <Route path="/services/build/web-development" element={<WebDevelopmentPage />} />
-          <Route path="/services/build/mobile-apps" element={<MobileAppsPage />} />
-          <Route path="/services/build/ui-ux-design" element={<UiUxDesignPage />} />
-          <Route path="/services/build/custom-software" element={<CustomSoftwarePage />} />
-
+          
           {/* Services - Grow Sub-routes */}
           <Route path="/services/grow" element={<GrowLanePage />} />
           <Route path="/services/grow/seo" element={<GrowLanePage />} />
