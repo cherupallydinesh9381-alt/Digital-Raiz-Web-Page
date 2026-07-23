@@ -1,0 +1,96 @@
+.logo-anim-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  background-color: transparent;
+  /* Assuming dark background from parent */
+  overflow: hidden;
+}
+
+.logo-anim-content {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  /* For the sweep effect */
+  padding: 10px;
+}
+
+.logo-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+/* Light Mode Defaults */
+:root {
+  --logo-sweep-start: rgba(0, 0, 0, 0);
+  --logo-sweep-mid: rgba(0, 0, 0, 0.15);
+  --logo-sweep-end: rgba(0, 0, 0, 0);
+  --line-edge: rgba(0, 0, 0, 0);
+  --line-center: rgba(0, 0, 0, 0.6);
+}
+
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --logo-sweep-start: rgba(255, 255, 255, 0);
+    --logo-sweep-mid: rgba(255, 255, 255, 0.4);
+    --logo-sweep-end: rgba(255, 255, 255, 0);
+    --line-edge: rgba(255, 255, 255, 0);
+    --line-center: rgba(255, 255, 255, 1);
+  }
+}
+
+html.dark {
+  --logo-sweep-start: rgba(255, 255, 255, 0);
+  --logo-sweep-mid: rgba(255, 255, 255, 0.4);
+  --logo-sweep-end: rgba(255, 255, 255, 0);
+  --line-edge: rgba(255, 255, 255, 0);
+  --line-center: rgba(255, 255, 255, 1);
+}
+
+/* Light Sweep */
+.logo-sweep {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right,
+      var(--logo-sweep-start) 0%,
+      var(--logo-sweep-mid) 50%,
+      var(--logo-sweep-end) 100%);
+  transform: skewX(-25deg);
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  will-change: left;
+}
+
+.logo-line-svg {
+  width: 100%;
+  height: 2px;
+  margin-top: 5px;
+  overflow: visible;
+}
+
+.line-grad-edge {
+  stop-color: var(--line-edge);
+}
+
+.line-grad-center {
+  stop-color: var(--line-center);
+}

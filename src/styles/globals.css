@@ -1,0 +1,456 @@
+@import 'tailwindcss';
+@import './tokens.css';
+@import './typography.css';
+
+
+
+
+@theme {
+  /* Changed from 1.5s to 3.5s for a slower, smoother expansion */
+  --animate-grow-to-85: grow-to-85 4.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+
+  @keyframes grow-to-85 {
+    0% {
+      width: 0%;
+    }
+
+    100% {
+      width: 85%;
+    }
+  }
+}
+
+@keyframes gradient-dual-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-text {
+  /* 400% width creates the deep depth needed for a two-way flow */
+  background-size: 300% 100%;
+  animation: gradient-dual-flow 5s ease-in-out infinite;
+}
+
+
+@theme {
+  --animate-grow-height: grow-height 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+
+  @keyframes grow-height {
+    0% {
+      height: 0%;
+    }
+  }
+}
+
+@keyframes gradient {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 35s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 35s linear infinite;
+}
+
+
+/* ============================================================
+   @theme — Map CSS vars to Tailwind utility tokens
+   ============================================================ */
+@theme {
+  /* ── Colors ─────────────────────────────────────────────── */
+  --color-dr-void: var(--dr-void);
+  --color-dr-surface: var(--dr-surface);
+  --color-dr-elevated: var(--dr-elevated);
+  --color-dr-panel: var(--dr-panel);
+  --color-dr-border: var(--dr-border);
+  --color-dr-border-strong: var(--dr-border-strong);
+  --color-dr-border-accent: var(--dr-border-accent);
+
+  --color-dr-text-primary: var(--dr-text-primary);
+  --color-dr-text-secondary: var(--dr-text-secondary);
+  --color-dr-text-muted: var(--dr-text-muted);
+
+  --color-dr-cyan: var(--dr-cyan);
+  --color-dr-rose: var(--dr-rose);
+  --color-dr-amber: var(--dr-amber);
+  --color-dr-violet: var(--dr-violet);
+  --color-dr-indigo: var(--dr-indigo);
+  --color-dr-magenta: var(--dr-magenta);
+  --color-dr-sky: var(--dr-sky);
+
+  --color-dr-success: var(--dr-success);
+  --color-dr-warning: var(--dr-warning);
+  --color-dr-error: var(--dr-error);
+
+  --color-lane-build: var(--lane-build);
+  --color-lane-grow: var(--lane-grow);
+  --color-lane-advise: var(--lane-advise);
+
+  /* ── Fonts ──────────────────────────────────────────────── */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  /* ── Radius ─────────────────────────────────────────────── */
+  --radius-dr-sm: var(--radius-sm);
+  --radius-dr-md: var(--radius-md);
+  --radius-dr-lg: var(--radius-lg);
+  --radius-dr-xl: var(--radius-xl);
+  --radius-dr-full: var(--radius-full);
+
+  /* ── Breakpoints ────────────────────────────────────────── */
+  --breakpoint-xs: 30rem;
+
+  /* ── Animations ─────────────────────────────────────────── */
+  --animate-float-slow: float-slow 6s ease-in-out infinite;
+  --animate-float-medium: float-medium 5s ease-in-out infinite;
+  --animate-float-fast: float-fast 4s ease-in-out infinite;
+
+  --animate-gradient-shift: gradient-shift 6s ease-in-out infinite;
+  --animate-gradient-flow: gradient-flow 4s ease infinite;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 45s linear infinite;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-spin-slow: spin 8s linear infinite;
+
+  @keyframes float-slow {
+
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-16px) rotate(1deg);
+    }
+  }
+
+  @keyframes float-medium {
+
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(14px) rotate(-1.5deg);
+    }
+  }
+
+  @keyframes float-fast {
+
+    0%,
+    100% {
+      transform: translateY(0px) scale(1);
+    }
+
+    50% {
+      transform: translateY(-10px) scale(1.04);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes gradient-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-reverse {
+    0% {
+      transform: translateX(-50%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+    }
+
+    50% {
+      box-shadow: 0 0 40px rgba(0, 242, 254, 0.5);
+    }
+  }
+}
+
+/* ============================================================
+   @layer base — Global Resets & Base Styles
+   ============================================================ */
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background-color: var(--dr-void);
+    color: var(--dr-text-primary);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+    transition: background-color var(--duration-slow), color var(--duration-slow);
+  }
+
+  #root {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::selection {
+    background-color: rgba(0, 242, 254, 0.25);
+    color: var(--dr-text-primary);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--dr-cyan);
+    outline-offset: 3px;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font: inherit;
+    cursor: pointer;
+  }
+}
+
+/* ============================================================
+   @layer utilities — Custom utility classes
+   ============================================================ */
+@layer utilities {
+
+  /* ── Gradients ── */
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-brand {
+    background-image: var(--gradient-brand);
+  }
+
+  .bg-gradient-cta {
+    background-image: var(--gradient-cta);
+  }
+
+  .bg-gradient-cyan {
+    background-image: var(--gradient-cyan);
+  }
+
+  .bg-gradient-rose {
+    background-image: var(--gradient-rose);
+  }
+
+  /* ── Animated gradient text ── */
+  .text-gradient-brand {
+    background: var(--gradient-brand);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 6s ease-in-out infinite;
+  }
+
+  .text-gradient-cta {
+    background: var(--gradient-cta);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ── Container ── */
+  .container-dr {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--space-4);
+  }
+
+  @media (min-width: 640px) {
+    .container-dr {
+      padding-inline: var(--space-6);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-dr {
+      padding-inline: var(--space-8);
+    }
+  }
+
+  /* ── Glow utilities ── */
+  .glow-cyan {
+    box-shadow: var(--shadow-glow-cyan);
+  }
+
+  .glow-rose {
+    box-shadow: var(--shadow-glow-rose);
+  }
+
+  .glow-amber {
+    box-shadow: var(--shadow-glow-amber);
+  }
+
+  /* ── Card shadow ── */
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* ── Glass surfaces ── */
+  .glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  :root.light .glass {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  /* ── Gradient border ── */
+  .border-gradient-brand {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+  }
+
+  .border-gradient-brand::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-brand);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  /* ── Animated marquee ── */
+  .animate-marquee {
+    animation: var(--animate-marquee);
+  }
+
+  .animate-marquee-reverse {
+    animation: var(--animate-marquee-reverse);
+  }
+
+  .animate-gradient-shift {
+    animation: var(--animate-gradient-shift);
+  }
+
+  .animate-pulse-glow {
+    animation: var(--animate-pulse-glow);
+  }
+}

@@ -1,0 +1,147 @@
+/* ============================================================
+   DigitalRaiz Design Tokens — Dark (default) + Light Theme
+   Brand: Cyan #00f2fe · Rose #ff2a5f · Amber #ffb800
+   ============================================================ */
+
+:root {
+  /* ── Dark Mode Surfaces ─────────────────────────────────── */
+  --dr-void:     #020409;        /* Page background */
+  --dr-surface:  #0a0f1a;        /* Section surface */
+  --dr-elevated: #111827;        /* Card / raised surface */
+  --dr-panel:    #1a2233;        /* Panel / input background */
+  --dr-border:         rgba(255,255,255,0.07);
+  --dr-border-strong:  rgba(255,255,255,0.13);
+  --dr-border-accent:  rgba(0,242,254,0.25);
+
+  /* ── Dark Mode Text ─────────────────────────────────────── */
+  --dr-text-primary:   #f1f5f9;  /* slate-100 */
+  --dr-text-secondary: #94a3b8;  /* slate-400 */
+  --dr-text-muted:     #475569;  /* slate-600 */
+  --dr-text-disabled:  #334155;  /* slate-700 */
+
+  /* ── Brand Colors ───────────────────────────────────────── */
+  --dr-cyan:    #00f2fe;
+  --dr-rose:    #ff2a5f;
+  --dr-amber:   #ffb800;
+  --dr-violet:  #7c3aed;
+  --dr-indigo:  #4f46e5;
+  --dr-magenta: #e91e8c;
+  --dr-sky:     #38bdf8;
+
+  /* Slightly muted versions for backgrounds */
+  --dr-cyan-dim:   rgba(0,242,254,0.12);
+  --dr-rose-dim:   rgba(255,42,95,0.12);
+  --dr-amber-dim:  rgba(255,184,0,0.12);
+  --dr-violet-dim: rgba(124,58,237,0.12);
+
+  /* ── Semantic ───────────────────────────────────────────── */
+  --dr-success: #34d399;
+  --dr-warning: #fbbf24;
+  --dr-error:   #f87171;
+
+  /* ── Gradients ──────────────────────────────────────────── */
+  --gradient-brand: linear-gradient(135deg, #ff2a5f 0%, #00f2fe 50%, #ffb800 100%);
+  --gradient-cta:   linear-gradient(135deg, #ff2a5f 0%, #7c3aed 100%);
+  --gradient-hero:  radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,242,254,0.18), transparent 70%);
+  --gradient-cyan:  linear-gradient(135deg, #00f2fe, #38bdf8);
+  --gradient-rose:  linear-gradient(135deg, #ff2a5f, #e91e8c);
+
+  /* ── Lane Accents ───────────────────────────────────────── */
+  --lane-build:  var(--dr-cyan);
+  --lane-grow:   var(--dr-amber);
+  --lane-advise: var(--dr-violet);
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  /* ── Spacing (8px base) ─────────────────────────────────── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ── Radius ─────────────────────────────────────────────── */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-full: 9999px;
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  --container-max: 1280px;
+  --header-height: 4.5rem;
+
+  /* ── Motion ─────────────────────────────────────────────── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:   150ms;
+  --duration-base:   300ms;
+  --duration-slow:   500ms;
+  --duration-slower: 700ms;
+
+  /* ── Shadows (Dark) ─────────────────────────────────────── */
+  --shadow-card: 0 4px 24px -4px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+  --shadow-elevated: 0 8px 40px -8px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.08);
+  --shadow-glow-cyan:   0 0 30px rgba(0,242,254,0.3);
+  --shadow-glow-rose:   0 0 30px rgba(255,42,95,0.3);
+  --shadow-glow-amber:  0 0 30px rgba(255,184,0,0.3);
+}
+
+/* ================================================================
+   LIGHT THEME  (.light class on :root or html)
+   ================================================================ */
+:root.light {
+  /* ── Light Mode Surfaces ────────────────────────────────── */
+  --dr-void:     #ffffff;
+  --dr-surface:  #f8fafc;        /* slate-50 */
+  --dr-elevated: #f1f5f9;        /* slate-100 */
+  --dr-panel:    #e2e8f0;        /* slate-200 */
+  --dr-border:         rgba(0,0,0,0.07);
+  --dr-border-strong:  rgba(0,0,0,0.14);
+  --dr-border-accent:  rgba(0,200,220,0.3);
+
+  /* ── Light Mode Text ────────────────────────────────────── */
+  --dr-text-primary:   #0f172a;  /* slate-900 */
+  --dr-text-secondary: #475569;  /* slate-600 */
+  --dr-text-muted:     #94a3b8;  /* slate-400 */
+  --dr-text-disabled:  #cbd5e1;  /* slate-300 */
+
+  /* ── Brand Colors (slightly deeper for light bg) ─────────── */
+  --dr-cyan:    #00c8d4;
+  --dr-rose:    #e31e55;
+  --dr-amber:   #d97706;
+  --dr-violet:  #6d28d9;
+
+  /* Slightly muted bg versions */
+  --dr-cyan-dim:   rgba(0,200,212,0.10);
+  --dr-rose-dim:   rgba(227,30,85,0.08);
+  --dr-amber-dim:  rgba(217,119,6,0.08);
+  --dr-violet-dim: rgba(109,40,217,0.08);
+
+  /* ── Gradients (Light) ──────────────────────────────────── */
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,200,212,0.10), transparent 70%);
+
+  /* ── Shadows (Light) ────────────────────────────────────── */
+  --shadow-card:     0 1px 3px rgba(0,0,0,0.06), 0 4px 16px -4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.05);
+  --shadow-elevated: 0 4px 24px -4px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+  --shadow-glow-cyan:  0 0 20px rgba(0,200,212,0.2);
+  --shadow-glow-rose:  0 0 20px rgba(227,30,85,0.15);
+  --shadow-glow-amber: 0 0 20px rgba(217,119,6,0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast:   0ms;
+    --duration-base:   0ms;
+    --duration-slow:   0ms;
+    --duration-slower: 0ms;
+  }
+}
